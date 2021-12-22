@@ -11,9 +11,9 @@ import { io } from "socket.io-client";
 
 const Editor = () => {
   useEffect(() => {
-    const socket = io("http://localhost:3001");
+    // const socket = io("http://localhost:3001");
 
-    const editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+    CodeMirror.fromTextArea(document.getElementById("code"), {
       lineNumbers: true,
       keyMap: "sublime",
       lineWrapping: "true",
@@ -21,9 +21,9 @@ const Editor = () => {
       mode: "javascript",
     });
 
-    return () => {
-      socket.disconnect();
-    };
+    // return () => {
+    //   socket.disconnect();
+    // };
   }, []);
 
   return <textarea id="code" />;
